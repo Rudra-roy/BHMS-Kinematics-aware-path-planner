@@ -568,16 +568,15 @@ def visualize(map_proc, searched_f, searched_b, path, start, goal, save_opt=Fals
     draw_arrow(start, start[2], (255, 0, 0))
     draw_arrow(goal, goal[2], (0, 0, 255))
 
-    cv2.imshow("BMHS Path Planner (C++ Accelerated)", vis_img)
-    print("Press any key to close the visualization...")
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
-
     if save_opt:
         cv2.imwrite("planned_path.png", vis_img)
         print("Saved visualization to planned_path.png")
 
-
+    if os.environ.get('DISPLAY'):
+        cv2.imshow("BMHS Path Planner (C++ Accelerated)", vis_img)
+        print("Press any key to close the visualization...")
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
 def main():
     parser = argparse.ArgumentParser(description="BMHS Path Planner (C++ Accelerated)")
     parser.add_argument('--map', type=str, default='../map.pgm', help='Path to PGM map')

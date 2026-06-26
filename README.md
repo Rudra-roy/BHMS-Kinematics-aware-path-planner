@@ -8,6 +8,18 @@ BMHS (Bidirectional Multi-Heuristic Search) is a hybrid A* path planner designed
 - **Clearance-Aware Simplification**: Post-processes the A* path using line-of-sight checks that respect obstacle clearance to eliminate unnecessary zigzags.
 - **Smooth Trajectories**: Bezier curve smoothing for Ackermann vehicles, ensuring physical drivability.
 
+## Visual Examples
+
+Here are examples showing the kinematic-aware path planning, simplification, and smoothing in action.
+
+### Ackermann (Car-like) Planning
+![Ackermann Example](assets/ackermann_example.png)
+*Ackermann mode featuring bezier curve smoothing at corners, honoring the minimum turning radius.*
+
+### Differential Drive Planning
+![Differential Example](assets/differential_example.png)
+*Differential mode featuring long straight line-of-sight paths and in-place pivoting capabilities.*
+
 ## Installation
 
 ### Dependencies
