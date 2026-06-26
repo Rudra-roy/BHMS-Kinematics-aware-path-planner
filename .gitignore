@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+build/
+dist/
+
+# Output
+planned_path.png
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
