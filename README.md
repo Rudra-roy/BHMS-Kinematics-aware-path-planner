@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🤖 BMHS Path Planner</h1>
+  <h1>BMHS Path Planner</h1>
   <p><strong>Bidirectional Multi-Heuristic Search for Kinematic-Aware Ground Vehicles</strong></p>
   
   ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -12,15 +12,15 @@
 
 **BMHS (Bidirectional Multi-Heuristic Search)** is an advanced hybrid A* path planner designed for ground vehicles navigating complex 2D environments. It bridges the gap between pure grid-based searches and continuous kinematic constraints, offering blazing-fast convergence times through C++ accelerated multi-heuristics.
 
-## ✨ Features
+## Features
 
-- 🏎️ **Vehicle Kinematics**: Native support for both `ackermann` (car-like) and `differential` drive vehicle models with physically accurate motion primitives.
-- 🧠 **Multi-Heuristic Bidirectional Search**: Simultaneously expands search trees from both the start and goal states. Utilizes dual 2D Dijkstra obstacle-aware heuristics calculated in parallel to massively prune the search space.
-- ⚡ **C++ Acceleration (Pybind11)**: Core heuristic computation and search loops are offloaded to C++, bypassing the GIL and achieving **100x+ speedup** over native Python implementations.
-- 📏 **Clearance-Aware Simplification**: Intelligent post-processing raycasts the raw A* path, dropping unnecessary waypoints while strictly maintaining safe clearance distances from inflated obstacles.
-- 📐 **Smooth Trajectories**: Applies quadratic Bezier curve smoothing specifically for Ackermann vehicles, converting sharp waypoints into drivable arcs that respect the physical minimum turning radius.
+- **Vehicle Kinematics**: Native support for both `ackermann` (car-like) and `differential` drive vehicle models with physically accurate motion primitives.
+- **Multi-Heuristic Bidirectional Search**: Simultaneously expands search trees from both the start and goal states. Utilizes dual 2D Dijkstra obstacle-aware heuristics calculated in parallel to massively prune the search space.
+- **C++ Acceleration (Pybind11)**: Core heuristic computation and search loops are offloaded to C++, bypassing the GIL and achieving **100x+ speedup** over native Python implementations.
+- **Clearance-Aware Simplification**: Intelligent post-processing raycasts the raw A* path, dropping unnecessary waypoints while strictly maintaining safe clearance distances from inflated obstacles.
+- **Smooth Trajectories**: Applies quadratic Bezier curve smoothing specifically for Ackermann vehicles, converting sharp waypoints into drivable arcs that respect the physical minimum turning radius.
 
-## 🔬 Algorithm Explanation
+## Algorithm Explanation
 
 Traditional A* or Hybrid A* planners often struggle in environments with "bug traps" (local minima) or complex narrow corridors. **BMHS** solves this through a multi-layered approach:
 
@@ -32,7 +32,7 @@ Traditional A* or Hybrid A* planners often struggle in environments with "bug tr
 3. **Adaptive Intersection Criteria**: Convergence is achieved when the forward and backward trees meet. The planner intelligently relaxes orientation constraints for differential drives, enabling ultra-fast rendezvous in tight spaces.
 4. **Post-Processing**: The discrete lattice path is simplified via Bresenham line-of-sight checks, and subsequently smoothed using constrained Bezier curves for maximum drivability.
 
-## 📸 Visual Examples
+## Visual Examples
 
 <div align="center">
   <table style="width:100%">
@@ -103,6 +103,6 @@ python bmhs_planner.py --map map.pgm --vtype differential --auto
 
 ## 🤝 Contributors
 
-- **[Your Name]** - *Algorithm Design & Core Implementation*
+- **[Hironmoy Roy Rudra]** - *Algorithm Design & Core Implementation*
 
 *Contributions are welcome! Please feel free to submit a Pull Request.*
