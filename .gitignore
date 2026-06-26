@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 *.so
 *.egg-info/
-build/
 dist/
 
 # Output
@@ -14,3 +13,8 @@ planned_path.png
 .vscode/
 .idea/
 .DS_Store
+
+# ROS2 / Colcon
+build/
+*install/
+*log/

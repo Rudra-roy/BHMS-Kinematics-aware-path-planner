@@ -101,6 +101,12 @@ python bmhs_planner.py --map map.pgm --vtype differential --auto
 | `--goal` | `float` x 3 | `None` | Specify goal state manually: `x y theta`. |
 | `--save` | `flag` | `False` | Save the planned path visualization to an image file. |
 
+## 🧪 Experimental ROS2 C++ Package
+
+We have recently introduced a native **ROS2 Humble C++ package** (`bmhs_planner_ros`) with a professional action-based architecture for use with Clearpath Husky or similar simulated robots. It fully ports the core BMHS algorithm logic into zero-dependency C++17, running three nodes to coordinate `ComputePathToPose` and `FollowPath` actions.
+
+For detailed architecture, configuration, and launch instructions, please see the [ROS2 Package README](bmhs_planner_ros/README.md).
+
 ## 🤝 Contributors
 
 - **[Hironmoy Roy Rudra]** - *Algorithm Design & Core Implementation*
